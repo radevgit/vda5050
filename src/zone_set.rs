@@ -187,13 +187,16 @@ mod tests {
     use super::*;
 
     fn zone(extra: &str) -> String {
-        format!(r#"{{"zoneId":"z","vertices":[{{"x":0,"y":0}},{{"x":1,"y":0}},{{"x":1,"y":1}}],{extra}}}"#)
+        format!(
+            r#"{{"zoneId":"z","vertices":[{{"x":0,"y":0}},{{"x":1,"y":0}},{{"x":1,"y":1}}],{extra}}}"#
+        )
     }
 
     #[test]
     fn speed_limit_requires_maximum_speed() {
         assert!(serde_json::from_str::<Zone>(&zone(r#""zoneType":"SPEED_LIMIT""#)).is_err());
-        let z: Zone = serde_json::from_str(&zone(r#""zoneType":"SPEED_LIMIT","maximumSpeed":0.5"#)).unwrap();
+        let z: Zone =
+            serde_json::from_str(&zone(r#""zoneType":"SPEED_LIMIT","maximumSpeed":0.5"#)).unwrap();
         assert_eq!(z.kind, ZoneKind::SpeedLimit { maximum_speed: 0.5 });
     }
 

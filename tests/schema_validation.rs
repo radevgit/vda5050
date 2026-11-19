@@ -18,8 +18,15 @@ fn validator(schema: &str) -> jsonschema::Validator {
 }
 
 fn assert_valid(v: &jsonschema::Validator, what: &str, instance: &Value) {
-    let errors: Vec<String> = v.iter_errors(instance).map(|e| format!("{e} at {}", e.instance_path())).collect();
-    assert!(errors.is_empty(), "{what} is not valid:\n{}", errors.join("\n"));
+    let errors: Vec<String> = v
+        .iter_errors(instance)
+        .map(|e| format!("{e} at {}", e.instance_path()))
+        .collect();
+    assert!(
+        errors.is_empty(),
+        "{what} is not valid:\n{}",
+        errors.join("\n")
+    );
 }
 
 /// example file -> valid against schema -> typed -> JSON again -> identical and still valid.
@@ -102,7 +109,10 @@ fn validator_rejects_bad_messages() {
     assert!(!v.is_valid(&bad), "bad enum accepted");
     let mut bad = read("tests/examples/connection.json");
     bad["timestamp"] = "yesterday".into();
-    assert!(!v.is_valid(&bad), "bad date-time accepted (formats not checked?)");
+    assert!(
+        !v.is_valid(&bad),
+        "bad date-time accepted (formats not checked?)"
+    );
     let mut bad = read("tests/examples/connection.json");
     bad["headerId"] = (-1).into();
     assert!(!v.is_valid(&bad), "negative headerId accepted");

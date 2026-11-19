@@ -3,8 +3,8 @@
 use serde::{Deserialize, Serialize};
 
 pub use crate::common::{
-    BoundingBoxReference, LoadDimensions, ControlPoint, IntermediatePath, MobileRobotPosition, PlannedPath, PolylinePoint, Trajectory,
-    Velocity,
+    BoundingBoxReference, ControlPoint, IntermediatePath, LoadDimensions, MobileRobotPosition,
+    PlannedPath, PolylinePoint, Trajectory, Velocity,
 };
 
 /// The `state` message (topic `/state`).

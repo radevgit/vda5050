@@ -63,7 +63,11 @@ pub struct NodePosition {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub theta: Option<f64>,
     /// Allowed deviation (ellipse) of the position in the XY plane.
-    #[serde(rename = "allowedDeviationXY", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "allowedDeviationXY",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub allowed_deviation_xy: Option<AllowedDeviationXy>,
     /// Allowed deviation of theta in rad (`0..=π`).
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -209,7 +213,12 @@ mod tests {
 
     #[test]
     fn blocking_types() {
-        for (s, b) in [("NONE", BlockingType::None), ("SOFT", BlockingType::Soft), ("SINGLE", BlockingType::Single), ("HARD", BlockingType::Hard)] {
+        for (s, b) in [
+            ("NONE", BlockingType::None),
+            ("SOFT", BlockingType::Soft),
+            ("SINGLE", BlockingType::Single),
+            ("HARD", BlockingType::Hard),
+        ] {
             let v: BlockingType = serde_json::from_str(&format!("\"{s}\"")).unwrap();
             assert_eq!(v, b);
             assert_eq!(serde_json::to_string(&b).unwrap(), format!("\"{s}\""));

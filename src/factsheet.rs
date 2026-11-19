@@ -158,61 +158,137 @@ pub struct MaximumStringLengths {
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MaximumArrayLengths {
     /// Maximum number of nodes per order.
-    #[serde(rename = "order.nodes", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "order.nodes",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub order_nodes: Option<u32>,
     /// Maximum number of edges per order.
-    #[serde(rename = "order.edges", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "order.edges",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub order_edges: Option<u32>,
     /// Maximum number of actions per node.
-    #[serde(rename = "node.actions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "node.actions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub node_actions: Option<u32>,
     /// Maximum number of actions per edge.
-    #[serde(rename = "edge.actions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "edge.actions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub edge_actions: Option<u32>,
     /// Maximum number of parameters per action.
-    #[serde(rename = "action.actionParameters", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "action.actionParameters",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub action_action_parameters: Option<u32>,
     /// Maximum number of instant actions per message.
-    #[serde(rename = "instantActions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "instantActions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub instant_actions: Option<u32>,
     /// Maximum number of knots per trajectory.
-    #[serde(rename = "trajectory.knotVector", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "trajectory.knotVector",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub trajectory_knot_vector: Option<u32>,
     /// Maximum number of control points per trajectory.
-    #[serde(rename = "trajectory.controlPoints", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "trajectory.controlPoints",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub trajectory_control_points: Option<u32>,
     /// Maximum number of zones per zone set.
-    #[serde(rename = "zoneSet.zones", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "zoneSet.zones",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub zone_set_zones: Option<u32>,
     /// Maximum number of nodeStates sent (= nodes in the base).
-    #[serde(rename = "state.nodeStates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.nodeStates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_node_states: Option<u32>,
     /// Maximum number of edgeStates sent (= edges in the base).
-    #[serde(rename = "state.edgeStates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.edgeStates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_edge_states: Option<u32>,
     /// Maximum number of load objects sent.
-    #[serde(rename = "state.loads", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.loads",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_loads: Option<u32>,
     /// Maximum number of actionStates sent.
-    #[serde(rename = "state.actionStates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.actionStates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_action_states: Option<u32>,
     /// Maximum number of instantActionStates sent.
-    #[serde(rename = "state.instantActionStates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.instantActionStates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_instant_action_states: Option<u32>,
     /// Maximum number of zoneActionStates sent.
-    #[serde(rename = "state.zoneActionStates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.zoneActionStates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_zone_action_states: Option<u32>,
     /// Maximum number of errors per state message.
-    #[serde(rename = "state.errors", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.errors",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_errors: Option<u32>,
     /// Maximum number of information objects per state message.
-    #[serde(rename = "state.information", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "state.information",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub state_information: Option<u32>,
     /// Maximum number of error references per error.
-    #[serde(rename = "error.errorReferences", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "error.errorReferences",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub error_error_references: Option<u32>,
     /// Maximum number of info references per information.
-    #[serde(rename = "information.infoReferences", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "information.infoReferences",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub information_info_references: Option<u32>,
 }
 
