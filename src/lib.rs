@@ -1,4 +1,4 @@
-//! Rust types for the VDA 5050 v3.0.1 messages.
+#![doc = include_str!("../README.md")]
 
 pub mod common;
 pub mod connection;
