@@ -6,6 +6,9 @@ license = "MIT"
 description = "Rust types for the VDA 5050 v3.0.1 AGV/AMR communication messages"
 repository = "https://github.com/radevgit/vda5050"
 readme = "README.md"
+documentation = "https://docs.rs/vda5050"
+keywords = ["vda5050", "agv", "amr", "robotics", "fleet-management"]
+categories = ["science::robotics", "encoding"]
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
