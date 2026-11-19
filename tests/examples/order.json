@@ -1,0 +1,6 @@
+{"headerId":10,"timestamp":"2017-04-15T11:40:03.123Z","version":"3.0.1","manufacturer":"ACME","serialNumber":"R-001","orderId":"o-1","orderUpdateId":0,"orderDescription":"demo",
+"nodes":[
+{"nodeId":"n1","sequenceId":0,"released":true,"nodeDescriptor":"start","nodePosition":{"x":0.0,"y":0.0,"theta":0.0,"allowedDeviationXY":{"a":0.1,"b":0.1,"theta":0.0},"allowedDeviationTheta":0.2,"mapId":"m1"},"actions":[]},
+{"nodeId":"n2","sequenceId":2,"released":false,"nodePosition":{"x":5.0,"y":0.0,"mapId":"m1"},"actions":[{"actionType":"pick","actionId":"a1","actionDescriptor":"pick pallet","blockingType":"HARD","actionParameters":[{"key":"loadId","value":"L1"},{"key":"height","value":1.2}],"retriable":true}]}],
+"edges":[
+{"edgeId":"e1","sequenceId":1,"released":true,"edgeDescriptor":"main aisle","maximumSpeed":1.5,"maximumMobileRobotHeight":2.0,"minimumLoadHandlingDeviceHeight":0.1,"orientation":0.0,"orientationType":"TANGENTIAL","direction":"left","reachOrientationBeforeEntering":false,"maximumRotationSpeed":0.5,"trajectory":{"degree":1,"knotVector":[0.0,0.0,1.0,1.0],"controlPoints":[{"x":0.0,"y":0.0},{"x":5.0,"y":0.0,"weight":1.0}]},"length":5.0,"corridor":{"leftWidth":0.5,"rightWidth":0.5,"corridorReferencePoint":"CONTOUR","releaseRequired":true,"releaseLossBehavior":"STOP"},"actions":[{"actionType":"beep","actionId":"a0","blockingType":"NONE"}]}]}

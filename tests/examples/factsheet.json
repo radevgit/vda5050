@@ -1,0 +1,245 @@
+{
+ "headerId": 1,
+ "timestamp": "2017-04-15T11:40:03.123Z",
+ "version": "3.0.1",
+ "manufacturer": "ACME",
+ "serialNumber": "R-001",
+ "typeSpecification": {
+  "seriesName": "X1",
+  "seriesDescription": "demo",
+  "mobileRobotKinematics": "DIFFERENTIAL",
+  "mobileRobotClass": "CARRIER",
+  "maximumLoadMass": 500.0,
+  "localizationTypes": [
+   "NATURAL",
+   "MY_OWN_TYPE"
+  ],
+  "navigationTypes": [
+   "VIRTUAL_LINE_GUIDED",
+   "FREELY_NAVIGATING"
+  ],
+  "supportedZones": [
+   "BLOCKED",
+   "RELEASE",
+   "SPEED_LIMIT",
+   "COORDINATED_REPLANNING"
+  ]
+ },
+ "physicalParameters": {
+  "minimumSpeed": 0.1,
+  "maximumSpeed": 1.5,
+  "minimumAngularSpeed": 0.05,
+  "maximumAngularSpeed": 1.0,
+  "maximumAcceleration": 0.5,
+  "maximumDeceleration": 0.8,
+  "minimumHeight": 0.3,
+  "maximumHeight": 0.5,
+  "width": 0.8,
+  "length": 1.2
+ },
+ "protocolLimits": {
+  "maximumStringLengths": {
+   "maximumMessageLength": 10000,
+   "maximumTopicSerialLength": 32,
+   "maximumTopicElementLength": 32,
+   "maximumIdLength": 64,
+   "idNumericalOnly": false,
+   "maximumLoadIdLength": 32
+  },
+  "maximumArrayLengths": {
+   "order.nodes": 100,
+   "order.edges": 100,
+   "node.actions": 5,
+   "edge.actions": 5,
+   "action.actionParameters": 10,
+   "instantActions": 10,
+   "trajectory.knotVector": 50,
+   "trajectory.controlPoints": 50,
+   "zoneSet.zones": 200,
+   "state.nodeStates": 100,
+   "state.edgeStates": 100,
+   "state.loads": 4,
+   "state.actionStates": 50,
+   "state.instantActionStates": 20,
+   "state.zoneActionStates": 20,
+   "state.errors": 10,
+   "state.information": 10,
+   "error.errorReferences": 5,
+   "information.infoReferences": 5
+  },
+  "timing": {
+   "minimumOrderInterval": 1.0,
+   "minimumStateInterval": 0.5,
+   "defaultStateInterval": 30.0,
+   "visualizationInterval": 0.1
+  }
+ },
+ "protocolFeatures": {
+  "optionalParameters": [
+   {
+    "parameter": "order.nodes.nodePosition.allowedDeviationTheta",
+    "support": "SUPPORTED",
+    "description": "for docking"
+   },
+   {
+    "parameter": "order.edges.direction",
+    "support": "REQUIRED"
+   }
+  ],
+  "mobileRobotActions": [
+   {
+    "actionType": "pick",
+    "actionDescription": "pick a load",
+    "actionScopes": [
+     "NODE",
+     "INSTANT"
+    ],
+    "actionParameters": [
+     {
+      "key": "loadId",
+      "valueDataType": "STRING",
+      "description": "id",
+      "isOptional": true
+     },
+     {
+      "key": "height",
+      "valueDataType": "NUMBER"
+     }
+    ],
+    "actionResult": "load id read",
+    "blockingTypes": [
+     "HARD",
+     "SOFT"
+    ],
+    "pauseAllowed": true,
+    "cancelAllowed": false
+   },
+   {
+    "actionType": "beep",
+    "actionScopes": [
+     "EDGE",
+     "ZONE"
+    ],
+    "pauseAllowed": false,
+    "cancelAllowed": true
+   }
+  ]
+ },
+ "mobileRobotGeometry": {
+  "wheelDefinitions": [
+   {
+    "type": "DRIVE",
+    "isActiveDriven": true,
+    "isActiveSteered": false,
+    "position": {
+     "x": 0.0,
+     "y": 0.3,
+     "theta": 0.0
+    },
+    "diameter": 0.2,
+    "width": 0.05,
+    "centerDisplacement": 0.0,
+    "constraints": "none"
+   }
+  ],
+  "envelopes2d": [
+   {
+    "envelope2dId": "env1",
+    "vertices": [
+     {
+      "x": -0.6,
+      "y": -0.4
+     },
+     {
+      "x": 0.6,
+      "y": -0.4
+     },
+     {
+      "x": 0.6,
+      "y": 0.4
+     },
+     {
+      "x": -0.6,
+      "y": 0.4
+     }
+    ],
+    "description": "outline"
+   }
+  ],
+  "envelopes3d": [
+   {
+    "envelope3dId": "e3",
+    "format": "DXF",
+    "data": {
+     "k": "v"
+    },
+    "url": "ftp://example.com/x",
+    "description": "3d"
+   }
+  ]
+ },
+ "loadSpecification": {
+  "loadPositions": [
+   "front",
+   "back"
+  ],
+  "loadSets": [
+   {
+    "setName": "DEFAULT",
+    "loadType": "EPAL",
+    "loadPositions": [
+     "front"
+    ],
+    "boundingBoxReference": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": 0.1,
+     "theta": 0.0
+    },
+    "loadDimensions": {
+     "length": 1.2,
+     "width": 0.8,
+     "height": 1.0
+    },
+    "maximumWeight": 500.0,
+    "minimumLoadhandlingHeight": 0.0,
+    "maximumLoadhandlingHeight": 1.5,
+    "minimumLoadhandlingDepth": 0.0,
+    "maximumLoadhandlingDepth": 0.2,
+    "minimumLoadhandlingTilt": -0.1,
+    "maximumLoadhandlingTilt": 0.1,
+    "maximumSpeed": 1.0,
+    "maximumAcceleration": 0.4,
+    "maximumDeceleration": 0.6,
+    "pickTime": 10.0,
+    "dropTime": 8.0,
+    "description": "standard pallet"
+   }
+  ]
+ },
+ "mobileRobotConfiguration": {
+  "versions": [
+   {
+    "key": "fw",
+    "value": "1.2.3"
+   }
+  ],
+  "network": {
+   "dnsServers": [
+    "10.0.0.1"
+   ],
+   "ntpServers": [
+    "10.0.0.2"
+   ],
+   "localIpAddress": "10.0.0.50",
+   "netmask": "255.255.255.0",
+   "defaultGateway": "10.0.0.1"
+  },
+  "batteryCharging": {
+   "criticalLowChargingLevel": 10.0,
+   "minimumDesiredChargingLevel": 30.0,
+   "maximumDesiredChargingLevel": 90.0,
+   "minimumChargingTime": 600
+  }
+ }
+}

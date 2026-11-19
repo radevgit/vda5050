@@ -1,0 +1,26 @@
+{
+ "headerId": 100,
+ "timestamp": "2017-04-15T11:40:03.123Z",
+ "version": "3.0.1",
+ "manufacturer": "ACME",
+ "serialNumber": "R-001",
+ "orderId": "",
+ "orderUpdateId": 0,
+ "lastNodeId": "",
+ "lastNodeSequenceId": 0,
+ "nodeStates": [],
+ "edgeStates": [],
+ "driving": false,
+ "actionStates": [],
+ "instantActionStates": [],
+ "powerSupply": {
+  "stateOfCharge": 100.0,
+  "charging": false
+ },
+ "operatingMode": "STARTUP",
+ "errors": [],
+ "safetyState": {
+  "activeEmergencyStop": "MANUAL",
+  "fieldViolation": true
+ }
+}

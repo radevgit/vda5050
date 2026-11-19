@@ -1,0 +1,286 @@
+{
+ "headerId": 2,
+ "timestamp": "2017-04-15T11:40:03.123Z",
+ "version": "3.0.1",
+ "manufacturer": "ACME",
+ "serialNumber": "R-001",
+ "zoneSet": {
+  "mapId": "m1",
+  "zoneSetId": "zs1",
+  "zoneSetDescriptor": "all zone types",
+  "zones": [
+   {
+    "zoneId": "z1",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "BLOCKED",
+    "zoneDescriptor": "no entry"
+   },
+   {
+    "zoneId": "z2",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "LINE_GUIDED"
+   },
+   {
+    "zoneId": "z3",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "RELEASE",
+    "releaseLossBehavior": "EVACUATE"
+   },
+   {
+    "zoneId": "z4",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "RELEASE"
+   },
+   {
+    "zoneId": "z5",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "COORDINATED_REPLANNING"
+   },
+   {
+    "zoneId": "z6",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "SPEED_LIMIT",
+    "maximumSpeed": 0.8
+   },
+   {
+    "zoneId": "z7",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "ACTION",
+    "entryActions": [
+     {
+      "actionType": "beep",
+      "actionDescriptor": "warn",
+      "blockingType": "NONE",
+      "actionParameters": [
+       {
+        "key": "duration",
+        "value": 2
+       }
+      ],
+      "retriable": false
+     }
+    ],
+    "duringActions": [],
+    "exitActions": [
+     {
+      "actionType": "beep",
+      "blockingType": "HARD"
+     }
+    ]
+   },
+   {
+    "zoneId": "z8",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "PRIORITY",
+    "priorityFactor": 0.7
+   },
+   {
+    "zoneId": "z9",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "PENALTY",
+    "penaltyFactor": 0.3
+   },
+   {
+    "zoneId": "z10",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "DIRECTED",
+    "direction": 1.57,
+    "directedLimitation": "RESTRICTED"
+   },
+   {
+    "zoneId": "z11",
+    "vertices": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 0.0
+     },
+     {
+      "x": 4.0,
+      "y": 3.0
+     },
+     {
+      "x": 0.0,
+      "y": 3.0
+     }
+    ],
+    "zoneType": "BIDIRECTED",
+    "direction": 0.0,
+    "bidirectedLimitation": "SOFT"
+   }
+  ]
+ }
+}

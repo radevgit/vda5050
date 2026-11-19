@@ -1,0 +1,45 @@
+{
+ "headerId": 1,
+ "timestamp": "2017-04-15T11:40:03.123Z",
+ "version": "3.0.1",
+ "manufacturer": "ACME",
+ "serialNumber": "R-001",
+ "typeSpecification": {
+  "seriesName": "X1",
+  "mobileRobotKinematics": "DIFFERENTIAL",
+  "mobileRobotClass": "CARRIER",
+  "maximumLoadMass": 500.0,
+  "localizationTypes": [
+   "NATURAL",
+   "MY_OWN_TYPE"
+  ],
+  "navigationTypes": [
+   "VIRTUAL_LINE_GUIDED",
+   "FREELY_NAVIGATING"
+  ]
+ },
+ "physicalParameters": {
+  "minimumSpeed": 0.1,
+  "maximumSpeed": 1.5,
+  "maximumAcceleration": 0.5,
+  "maximumDeceleration": 0.8,
+  "minimumHeight": 0.3,
+  "maximumHeight": 0.5,
+  "width": 0.8,
+  "length": 1.2
+ },
+ "protocolLimits": {
+  "maximumStringLengths": {},
+  "maximumArrayLengths": {},
+  "timing": {
+   "minimumOrderInterval": 1.0,
+   "minimumStateInterval": 0.5
+  }
+ },
+ "protocolFeatures": {
+  "optionalParameters": [],
+  "mobileRobotActions": []
+ },
+ "mobileRobotGeometry": {},
+ "loadSpecification": {}
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "instantActions",
+    "description": "JSON Schema for publishing instantActions that the mobile robot is to execute as soon as they arrive.",
+    "required": [
+        "headerId",
+        "timestamp",
+        "version",
+        "manufacturer",
+        "serialNumber",
+        "actions"
+    ],
+    "subtopic": "/instantActions",
+    "type": "object",
+    "properties": {
+        "headerId": {
+            "type": "integer",
+            "description": "Header ID of the message. The headerId is defined per topic and incremented by 1 with each sent (but not necessarily received) message.",
+            "minimum": 0
+        },
+        "timestamp": {
+            "title": "timestamp",
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp in ISO8601 format (YYYY-MM-DDTHH:mm:ss.fffZ).",
+            "examples": [
+                "2017-04-15T11:40:03.123Z"
+            ]
+        },
+        "version": {
+            "title": "Version",
+            "type": "string",
+            "description": "Version of the protocol [Major].[Minor].[Patch]",
+            "examples": [
+                "1.3.2"
+            ]
+        },
+        "manufacturer": {
+            "type": "string",
+            "description": "Manufacturer of the mobile robot"
+        },
+        "serialNumber": {
+            "type": "string",
+            "description": "Serial number of the mobile robot."
+        },
+        "actions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "Describes an action that the mobile robot can perform.",
+                "required": [
+                    "actionId",
+                    "actionType",
+                    "blockingType"
+                ],
+                "properties": {
+                    "actionType": {
+                        "type": "string",
+                        "description": "Type of the action. Identifies the function of the action."
+                    },
+                    "actionId": {
+                        "type": "string",
+                        "description": "Unique ID to identify the action and map them to the actionState in the state. Suggestion: Use UUID."
+                    },
+                    "actionDescriptor": {
+                        "type": "string",
+                        "description": "A user-defined, human-readable name or descriptor. This shall not be used for logical purposes."
+                    },
+                    "blockingType": {
+                        "type": "string",
+                        "description": "The blocking type of an instant action is always NONE: action can happen in parallel with others, including movement.",
+                        "enum": [
+                            "NONE"
+                        ]
+                    },
+                    "actionParameters": {
+                        "type": "array",
+                        "description": "Action parameters for the indicated action, e.g., deviceId, loadId, external Triggers.",
+                        "items": {
+                            "title": "actionParameter",
+                            "type": "object",
+                            "required": [
+                                "key",
+                                "value"
+                            ],
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The key of the action parameter.",
+                                    "examples": [
+                                        "duration",
+                                        "direction",
+                                        "signal"
+                                    ]
+                                },
+                                "value": {
+                                    "type": [
+                                        "array",
+                                        "boolean",
+                                        "number",
+                                        "integer",
+                                        "string", 
+                                        "object"
+                                    ],
+                                    "description": "The value of the action parameter",
+                                    "examples": [
+                                        103.2,
+                                        "left",
+                                        true,
+                                        [
+                                            "arrays",
+                                            "are",
+                                            "also",
+                                            "valid"
+                                        ],
+                                        {
+                                            "objects": "as",
+                                            "well": true
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "retriable": {
+                        "type": "boolean",
+                        "description": "True: action can enter RETRIABLE state if it fails. False: action enters FAILED state directly after it fails. Default: false."
+                    }
+                }
+            }
+        }
+    }
+}

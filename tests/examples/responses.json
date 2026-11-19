@@ -1,0 +1,1 @@
+{"headerId":7,"timestamp":"2017-04-15T11:40:03.123Z","version":"3.0.1","manufacturer":"ACME","serialNumber":"R-001","responses":[{"requestId":"r1","grantType":"GRANTED","leaseExpiry":"2017-04-15T11:41:03.123Z"},{"requestId":"r2","grantType":"QUEUED"}]}

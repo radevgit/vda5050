@@ -1,0 +1,243 @@
+{
+ "headerId": 100,
+ "timestamp": "2017-04-15T11:40:03.123Z",
+ "version": "3.0.1",
+ "manufacturer": "ACME",
+ "serialNumber": "R-001",
+ "maps": [
+  {
+   "mapId": "m1",
+   "mapVersion": "1",
+   "mapDescriptor": "hall",
+   "mapStatus": "ENABLED"
+  }
+ ],
+ "zoneSets": [
+  {
+   "zoneSetId": "zs1",
+   "mapId": "m1",
+   "zoneSetStatus": "ENABLED"
+  }
+ ],
+ "orderId": "o-1",
+ "orderUpdateId": 2,
+ "lastNodeId": "n1",
+ "lastNodeSequenceId": 0,
+ "nodeStates": [
+  {
+   "nodeId": "n2",
+   "sequenceId": 2,
+   "nodeDescriptor": "dock",
+   "released": true,
+   "nodePosition": {
+    "x": 5.0,
+    "y": 0.0,
+    "theta": 0.0,
+    "mapId": "m1"
+   }
+  }
+ ],
+ "edgeStates": [
+  {
+   "edgeId": "e1",
+   "sequenceId": 1,
+   "edgeDescriptor": "aisle",
+   "released": true,
+   "trajectory": {
+    "degree": 1,
+    "knotVector": [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ],
+    "controlPoints": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 5.0,
+      "y": 0.0,
+      "weight": 1.0
+     }
+    ]
+   }
+  }
+ ],
+ "plannedPath": {
+  "trajectory": {
+   "controlPoints": [
+    {
+     "x": 0.0,
+     "y": 0.0
+    },
+    {
+     "x": 5.0,
+     "y": 0.0
+    }
+   ]
+  },
+  "traversedNodes": [
+   "n1",
+   "n2"
+  ]
+ },
+ "intermediatePath": {
+  "polyline": [
+   {
+    "x": 1.0,
+    "y": 0.0,
+    "theta": 0.0,
+    "eta": "2017-04-15T11:40:05.000Z"
+   }
+  ]
+ },
+ "mobileRobotPosition": {
+  "x": 0.5,
+  "y": 0.0,
+  "theta": 0.0,
+  "mapId": "m1",
+  "localized": true,
+  "localizationScore": 0.95,
+  "deviationRange": 0.02
+ },
+ "velocity": {
+  "vx": 1.0,
+  "vy": 0.0,
+  "omega": 0.0
+ },
+ "loads": [
+  {
+   "loadId": "L1",
+   "loadType": "pallet",
+   "loadPosition": "front",
+   "boundingBoxReference": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "theta": 0.0
+   },
+   "loadDimensions": {
+    "length": 1.2,
+    "width": 0.8,
+    "height": 1.0
+   },
+   "weight": 250.0
+  }
+ ],
+ "driving": true,
+ "paused": false,
+ "newBaseRequest": false,
+ "zoneRequests": [
+  {
+   "requestId": "r1",
+   "requestType": "ACCESS",
+   "zoneId": "z3",
+   "zoneSetId": "zs1",
+   "requestStatus": "REQUESTED"
+  },
+  {
+   "requestId": "r2",
+   "requestType": "REPLANNING",
+   "zoneId": "z5",
+   "zoneSetId": "zs1",
+   "requestStatus": "GRANTED",
+   "trajectory": {
+    "controlPoints": [
+     {
+      "x": 0.0,
+      "y": 0.0
+     },
+     {
+      "x": 1.0,
+      "y": 1.0
+     }
+    ]
+   }
+  }
+ ],
+ "edgeRequests": [
+  {
+   "requestId": "r3",
+   "requestType": "CORRIDOR",
+   "edgeId": "e1",
+   "sequenceId": 1,
+   "requestStatus": "QUEUED"
+  }
+ ],
+ "distanceSinceLastNode": 0.5,
+ "actionStates": [
+  {
+   "actionId": "a1",
+   "actionType": "pick",
+   "actionDescriptor": "pick pallet",
+   "actionStatus": "WAITING",
+   "actionResult": "ok"
+  }
+ ],
+ "instantActionStates": [
+  {
+   "actionId": "i1",
+   "actionStatus": "FINISHED"
+  }
+ ],
+ "zoneActionStates": [
+  {
+   "actionId": "za1",
+   "actionStatus": "RUNNING"
+  }
+ ],
+ "powerSupply": {
+  "stateOfCharge": 87.5,
+  "batteryVoltage": 48.1,
+  "batteryCurrent": -3.2,
+  "batteryHealth": 95,
+  "charging": false,
+  "range": 12000
+ },
+ "operatingMode": "AUTOMATIC",
+ "errors": [
+  {
+   "errorType": "lidarFault",
+   "errorReferences": [
+    {
+     "referenceKey": "nodeId",
+     "referenceValue": "n1"
+    }
+   ],
+   "errorDescription": "Lidar dirty",
+   "errorDescriptionTranslations": [
+    {
+     "translationKey": "de",
+     "translationValue": "Lidar verschmutzt"
+    }
+   ],
+   "errorHint": "Clean it",
+   "errorHintTranslations": [
+    {
+     "translationKey": "de",
+     "translationValue": "Reinigen"
+    }
+   ],
+   "errorLevel": "WARNING"
+  }
+ ],
+ "information": [
+  {
+   "infoType": "debug1",
+   "infoReferences": [
+    {
+     "referenceKey": "headerId",
+     "referenceValue": "99"
+    }
+   ],
+   "infoDescriptor": "x",
+   "infoLevel": "DEBUG"
+  }
+ ],
+ "safetyState": {
+  "activeEmergencyStop": "NONE",
+  "fieldViolation": false
+ }
+}
